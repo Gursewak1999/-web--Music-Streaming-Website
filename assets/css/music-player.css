@@ -1,0 +1,187 @@
+@charset "UTF-8";
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+
+#music_player{
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+    display: block;
+    bottom: 0px;
+    background: linear-gradient(141deg, #0C5B5F 0%, rgba(0, 212, 153, 0.77) 75%);
+    font-family: "Open Sans", sans-serif;
+    margin: 0px;
+  }
+  
+  
+  .player .timeline .controllers .back, 
+  .player .timeline .controllers .play,
+  .player .timeline .controllers .forward, 
+  .player .timeline .controllers, .player 
+  .timeline .volume, .player .head .infos, 
+  .player .head .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .player {
+    /* border-radius: 6px; */
+    background-color: white;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .player .head {
+    padding: 15px;
+    color: white;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    height: auto;
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+  }
+  .player .head .front {
+    position: relative;
+    height: 100%;
+    justify-content: space-around;
+  }
+  .player .head .back {
+    height: 110%;
+    width: 110%;
+    top: -10px;
+    left: -10px;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    /* background-image: url("https://images.unsplash.com/photo-1471623817296-aa07ae5c9f47"); */
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+  }
+  .player .head .avatar {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  .player .head .avatar img {
+    width: 100%;
+    height: 100%;
+  }
+  .player .head .infos {
+    padding-left: 10px;
+    justify-content: space-around;
+    flex-direction: column;
+    height: inherit;
+    align-items: baseline;
+  }
+  .player .head .title_song {
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  }
+  .player .head .artist_song {
+    font-size: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  }
+  .player .head .duracao_song {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  }
+  .player .timeline {
+    height: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .player .timeline .volume {
+    flex-direction: row;
+  }
+  .player .timeline .controllers.active .play {
+    box-shadow: 0px 0px 10px 2px rgba(30, 177, 150, 0.1);
+    animation: 3s pulseshadowplay infinite both;
+  }
+  .player .timeline .controllers .back, .player .timeline .controllers .play, .player .timeline .controllers .forward {
+    font-size: 16px;
+    margin: 10px;
+    color: #4A4A4A;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+  }
+  .player .timeline .controllers .play {
+    transition: all 0.3s ease-in-out;
+  }
+  .player .timeline .controllers .play:hover {
+    box-shadow: 0px 0px 10px 2px rgba(30, 177, 150, 0.38);
+    border: 2px solid rgba(143, 208, 196, 0.54) !important;
+  }
+  .player .timeline .controllers #back {
+    content: "";
+    font-family: "FontAwesome";
+    margin-right: 5px;
+  }
+  .player .timeline .controllers #play {
+    content: "";
+    font-family: "FontAwesome";
+    margin-left: 5px;
+  }
+  .player .timeline .controllers #forward {
+    content: "";
+    font-family: "FontAwesome";
+    margin-left: 5px;
+  }
+  .player .timeline .soundline {
+    width: 100%;
+    height: 6px;
+    position: relative;
+    background: #F3F3F3;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .player .timeline #soundline_color {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #6CE59C;
+    box-shadow: 0px 0px 9px #94FFBF;
+    transition: all 0.4s cubic-bezier(0.07, 0.82, 0.11, 1.02);
+   /* animation: 20s soundline infinite both linear;*/
+  }
+  
+  @keyframes pulseshadowplay {
+    0% {
+      box-shadow: 0px 0px 10px 2px rgba(30, 177, 150, 0.1);
+    }
+    50% {
+      box-shadow: 0px 0px 50px 2px rgba(30, 177, 150, 0.38);
+    }
+  }
+  @keyframes soundline {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes girandomt {
+    0% {
+      box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0px 0px 30px 40px rgba(255, 255, 255, 0);
+    }
+  }

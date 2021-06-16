@@ -1,0 +1,125 @@
+*{
+    --card-width: 240px;
+    --card-border: 20px;  
+}
+
+.container {
+  overflow: visible;
+position: inherit;
+margin-top: 2px;
+left: calc(50% - 300px);
+display: grid;
+grid-template-columns: repeat(auto-fit, var(--card-width));
+gap: 1rem;
+grid-auto-rows: 240px;
+}
+
+.list{
+  grid-auto-rows: 60px;
+  grid-row-gap: 8px;
+  grid-template-columns: repeat(auto-fit,100%);
+}
+.card {
+  height: auto;
+width: var(--card-width);
+border-radius: var(--card-border);
+overflow: hidden;
+box-shadow: -4px 4px 10px gray;
+margin-left: 20px;
+transition: 0.4s ease-out;
+position: relative;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    transition: 0.4s ease-out;
+}
+
+.title {
+	overflow: hidden;
+	border-radius: var(--card-border);
+  color: white;
+    font-weight: 300;
+    position: absolute;
+    padding: 10px;
+    margin-bottom: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: -1px;
+    height: 30%;
+    background: linear-gradient(
+0deg
+, rgb(0 0 0) 0%, rgb(17 17 19) 60%, rgb(255 255 255 / 0%) 100%);
+}
+
+.bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.emptybar {
+border-radius: var(--card-border);
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+	opacity: 0.6;
+	border-radius: var(--card-border);
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0,154,217);
+  background: linear-gradient(45deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 60%, rgba(255,186,0,1) 100%);
+  transition: 0.4s ease-out;
+}
+
+.card:hover .filledbar {
+	opacity: 0.3;
+	border-radius: var(--card-border);
+  width: 100%;
+  transition: 0.2s ease-out;
+}
+
+.card:hover .play_btn:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cover{
+	width:100%;
+	height:100%;
+	border-radius: var(--card-border);
+	outline: 0!important;
+}
+.play_svg{
+	    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(.7);
+    width: 45px;
+    height: 45px;
+    transition: transform .2s ease,-webkit-transform .2s ease;
+}
+.play_btn{
+	    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    /* background-color: rgba(53,67,74,.8); */
+    color: #ffffff;
+    transition: all .2s ease;
+    overflow: hidden;
+    border-radius: 4px;
+    opacity: 0;
+}

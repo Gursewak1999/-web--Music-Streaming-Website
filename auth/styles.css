@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+*{
+    --background : #002D45;
+    --login-card-background: #00B6FF;
+    --colorShadow:#9c9da8;
+    --fontFamily: "Dosis", sans-serif;
+    --fontSize: 12px;
+    --inputFontSize: 22px;
+
+    --transitionDuration: 300ms;
+    --transitionTF: cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* floated labels */
+    --inputPaddingV: var(--gutterMd);
+    --inputPaddingH: var(--gutterLg);
+    --inputFontSize: var(--fontSizeLg);
+    --inputLineHeight: var(--lineHeightMd);
+    --labelScaleFactor: 0.8;
+    --labelDefaultPosY: 50%;
+    --labelTransformedPosY: calc(
+            (var(--labelDefaultPosY)) - 
+            (var(--inputPaddingV) * var(--labelScaleFactor)) - 
+            (var(--inputFontSize) * var(--inputLineHeight))
+            );
+    --inputTransitionDuration: var(--transitionDuration);
+    --inputTransitionTF: var(--transitionTF);
+}
+body{
+    letter-spacing: 1;
+    background-color:var(--background);
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    color: white;
+}
+h1{
+    font-size:xx-large
+}
+.login_card{
+    background-color:var(--login-card-background);
+    left: 15%;
+    right: 15%;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    border: white solid 3px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.signup_card{
+    background-color:var(--login-card-background);
+    left: 15%;
+    right: 15%;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    border: white solid 2px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+input{
+    width  : 60%;
+    height : 35px;
+}
+
+.input-label{
+    width:60%;
+}
+
+.center{
+    width:100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* input */
+
+.input-text {
+    display: block;
+    margin: 0;
+    color: black;
+    font-family: inherit;
+    font-size: var(--inputFontSize);
+    font-weight: inherit;
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow var(--transitionDuration);
+}
+.input-label{
+    display: block;
+    margin: 0 0 -10px 0;
+    text-align: initial;
+    color: inherit;
+    font-family: inherit;
+    font-size: var(--inputFontSize);
+    font-weight: inherit;
+}
+.redirect-label{
+    display: block;
+    margin: 0 0 -10px 0;
+    text-align: center;
+    color: inherit;
+    font-family: inherit;
+    font-size: var(--inputFontSize);
+    font-weight: inherit;
+}
+.input-text::placeholder {
+    color: #B0BEC5;
+}
+
+.input-text:focus {
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem var(--colorShadow);
+}
+.submit{
+    color: white;
+    background: var(--background);
+    font-size: 14;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2;
+}
+  /* input close */
